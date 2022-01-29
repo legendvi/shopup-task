@@ -16,11 +16,10 @@ export default function GridCard(props) {
                   <h5 className="card-title">
                     {item.title ? item.title : "Title is not Available"}
                   </h5>
-                  <p className="card-text">
-                    <p>
-                      <b>Type: </b>
-                      {item.type ? item.type : "Type is not Available"}
-                    </p>
+                  <div className="card-text">
+                    <b>Type: </b>
+                    {item.type ? item.type : "Type is not Available"}
+
                     <p>
                       <b>Source: </b>
                       {item.source_tld
@@ -37,13 +36,13 @@ export default function GridCard(props) {
                         ? item.import_datetime.substring(0, 10)
                         : "No Import Date Available"}
                     </p>
-                    <p>
+                    <div>
                       <b>Trending Date: </b>
                       {item.trending_datetime.substring(0, 3) === "000"
                         ? "Not Available"
                         : item.trending_datetime.substring(0, 10)}
-                    </p>
-                  </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

@@ -1,7 +1,7 @@
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useMemo } from "react";
 import GridCard from "./GridCard";
 function ReactForm() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const nameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -39,7 +39,7 @@ function ReactForm() {
       }, delay);
     };
   };
-  const debouncedSearch = useCallback(debounce(handleSearch, 1000), []);
+  const debouncedSearch = useMemo(() => debounce(handleSearch, 1000), []);
   return (
     <>
       <div>
@@ -83,7 +83,7 @@ function ReactForm() {
           />
         </label>
       </div>
-      {data && <GridCard data={data} />}
+      <GridCard data={data} />
     </>
   );
 }
